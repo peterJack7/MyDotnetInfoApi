@@ -9,16 +9,9 @@ namespace MyDotnetInfoApi.Controllers
     public class InfoController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<InfoResponse> GetInfo()
+        public IActionResult Get()
         {
-            var response = new InfoResponse
-            {
-                Name = "My Dotnet App",
-                Version = "1.0.0",
-                Status = "Running"
-            };
-
-            return Ok(response);
+            return Ok(new { Message = "Hello from Dockerized .NET API!" });
         }
     }
 }
